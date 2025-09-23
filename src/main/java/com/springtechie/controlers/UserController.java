@@ -1,19 +1,26 @@
 package com.springtechie.controlers;
 
+import com.springtechie.impl.UserServiceImpl;
 import com.springtechie.models.User;
 import com.springtechie.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 public class UserController {
+
+    @Autowired
     private UserService userService;
 
+    // http://localhost:8080/get/user/id/1
     @GetMapping("/get/user/id/{id}")
-    public User fetchUser(int userId) {
-        User user = userService.getUser(userId);
+    public User fetchUser(@PathVariable int id) {
+        System.out.println(id);
+        User user = userService.getUser(id);
         return user;
     }
 
