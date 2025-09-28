@@ -1,37 +1,17 @@
 package com.springtechie.models;
 
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
-import org.springframework.data.cassandra.core.mapping.Table;
+import jakarta.persistence.*;
+import lombok.Data;
 
-@Table("dummy_user")
+@Entity
+@Table(name = "userdtls")
+@Data
 public class User {
-    @PrimaryKey
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-
-    public User(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public User() {
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    private String firstName;
+    private String lastName;
+    private int age;
 }
 

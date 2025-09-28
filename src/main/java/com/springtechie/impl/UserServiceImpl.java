@@ -30,12 +30,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public String saveUser(User user) {
         userRepository.save(user);
-        return "Saved User Successfully";
+        return "Created User Successfully";
     }
 
     @Override
     public String deleteUser(int id) {
         userRepository.deleteById(id);
         return "Deleted User Successfully";
+    }
+
+    @Override
+    public String updateUser(User user) {
+        userRepository.save(user);
+        return "Updated User Successfully";
     }
 }
