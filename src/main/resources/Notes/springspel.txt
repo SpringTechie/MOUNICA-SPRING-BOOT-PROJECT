@@ -25,4 +25,4 @@ By using SPEL, we can also perform mathematical operations and method calls.
     private String dummy;
 
     @Value("#{2 * T(Math).PI}")
-    private int circlearea;
+    private int area circlearea;
