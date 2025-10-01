@@ -1,6 +1,6 @@
 package com.springtechie;
 
-import com.springtechie.controlers.UserController;
+
 import com.springtechie.impl.UserServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
